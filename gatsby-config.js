@@ -12,5 +12,21 @@ module.exports = {
         component: require.resolve(`./src/components/layout.js`),
       },
     },
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-images`,
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/templates`,
+      },
+    },
   ],
 }

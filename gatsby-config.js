@@ -28,5 +28,18 @@ module.exports = {
         path: `${__dirname}/src/templates`,
       },
     },
+    {
+      resolve: `gatsby-plugin-react-redux`,
+      options: {
+        pathToCreateStoreModule: './src/state/createStore',
+        serialize: {
+          space: 0,
+          isJSON: true,
+          unsafe: false,
+        },
+        cleanupOnClient: true,
+        windowKey: '__PRELOADED_STATE__',
+      },
+    },
   ],
 }
